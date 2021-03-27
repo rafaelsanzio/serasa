@@ -9,7 +9,6 @@ import (
 	jwt "github.com/dgrijalva/jwt-go"
 )
 
-
 func IsAuthorized(next http.Handler) http.Handler {
   var mySigningKey = []byte(os.Getenv("API_KEY"))
 
