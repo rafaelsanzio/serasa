@@ -18,7 +18,7 @@ func main() {
   godotenv.Load()
   
 	router := routes.GetRouter()
-	PORT := os.Getenv("APP_PORT")
+	PORT := ":" + os.Getenv("APP_PORT")
   fmt.Println("API Started.")
 	err := http.ListenAndServe(PORT, utils.IsAuthorized(router))
 	log.Fatal(err)

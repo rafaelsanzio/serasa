@@ -1,9 +1,7 @@
 package config
 
 import (
-	"log"
-
-	"github.com/BurntSushi/toml"
+	"os"
 )
 
 type Config struct {
@@ -12,7 +10,6 @@ type Config struct {
 }
 
 func (c *Config) Read() {
-	if _, err := toml.DecodeFile("config.toml", &c); err != nil {
-		log.Fatal(err)
-	}
+	c.Server = os.Getenv("DB_SERVER") 
+	c.Database = os.Getenv("DB_DATABASE")
 }
