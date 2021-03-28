@@ -1,51 +1,54 @@
-# Serasa - Teste para analista desenvolvedor
-Olá, obrigado pelo interesse em fazer parte da nossa equipe.  
-O objetivo deste teste é verificar (até certo ponto) suas habilidades de codificação e arquitetura. Para isso você receberá um problema simples onde poderá mostrar suas técnicas de desenvolvimento.
-Nós encorajamos você a exagerar um pouco na solução para mostrar do que você é capaz.
-Considere um cenário em que você esteja construindo uma aplicação pronta para produção, onde outros desenvolvedores precisarão trabalhar e manter essa aplicação ao longo do tempo.  
-Você **PODE** e **DEVE** usar bibliotecas de terceiros, usando ou não um framework, você decide. Lembre-se, um desenvolvedor eficaz sabe o que construir e o que reutilizar.
-Na entrevista de "code review", esteja preparado para responder algumas perguntas sobre arquitetura, bibliotecas e, caso utilize, sobre o framework. Como e por que você as escolheu e com quais outras alternativas você está familiarizado, serão algumas dessas perguntas.
-Como este é um processo de "code review", evite adicionar código gerado ao projeto.
-***Obs***: Para realizar esse teste, não crie um repositório público! Esse desafio é compartilhado apenas com pessoas que estamos entrevistando e gostaríamos que permanecesse assim.  
-Aqui no Serasa, nós utilizamos o [Docker](https://www.docker.com/products/docker) para executar as aplicações, por isso, pedimos que você faça o mesmo neste teste. Isso garante que tenhamos um resultado idêntico ao seu quando testarmos sua aplicação.
+<h1 align="center">
+  <img style="background-color: #312e38; border-radius: 10px;" alt="serasa-logo" src="https://www.foregon.com/blog/wp-content/uploads/2020/10/servicosdaserasaexperian-1068x601.jpeg" />
+</h1>
 
-## Descrição do problema:
-A empresa XPTO tem uma aplicação legada (mainframe) de negativações que não está suportando a demanda atual, esta aplicação não pode ser alterada, portanto, é necessário construir um serviço que atenda a demanda, como Façade.
-Esta aplicação deve consumir os dados do legado e persistir numa base intermediária, devendo também expor uma API para acesso ao dados das negativações recebendo como parametro o CPF do cliente. 
+## 🔖 Sobre o projeto
 
-## Instruções
-- Para simular a aplicação legada a ser consumida, você deverá subir um servidor com o arquivo negativacoes.json (sugestão: json-server)
-- A API **DEVE**:
-  - possuir no minimo dois endpoints: um para consulta por cpf das negativações e outro para executar a integração
-  - seguir os padrões REST
-  - ser autenticada
-- Banco de dados ao seu critério
-- Camada de cache é opcional
-- Testes unitários
-- Documentação de setup e do funcionamento da API (um Makefile cai muito bem!)
+O projeto **Serasa Negativations**. Tendo como objetivo, criar uma API para importação de negativações e fazer consultas com filtros.
 
-## Desenvolvendo
-- crie um repositório no seu github (ou sistema de sua preferencia) este repositório
-- Crie uma nova branch chamada `develop`
-- Desenvolva a aplicação
-- Crie uma "pull request" da branch `develop` para a "branch" `master`. Essa PR deve conter as instruções para executarmos as suas aplicações, as tecnologias que você decidiu usar, por que decidiu utilizá-las e também as decisões que você teve quanto ao design do seu código
+## 💻 Tecnologias
 
-## Critérios de avaliação
-Dê uma atenção especial aos seguintes aspectos:
-- Você **DEVE** usar bibliotecas de terceiros, e pode escolher usar um framework, utilizar não vai ser uma penalidade, mas você vai precisar justificar a sua escolha.
-- Sua aplicação **DEVE** executar em container Docker.
-- Sua aplicação **DEVE** retornar um JSON válido e **DEVEM** conter os recursos citados anteriormente.
-- Você **DEVE** escrever um código testável e demonstrar isso escrevendo testes unitários.
-- Você **DEVE** prestar atenção nas melhores práticas para segurança de APIs.
-- Você **NÃO** precisa desenvolver um "frontend" (telas) para esse teste.
+- <img width="20px" src="https://img.icons8.com/color/2x/golang.png" /> [Golang](https://golang.org/ "Golang")
+- <img width="20px" src="https://img.icons8.com/dusk/2x/docker.png" /> [Docker](https://www.docker.com/ "Docker")
 
-## Pontos que consideramos um bônus:
-- Fazer uso de uma criptografia reversível de dados sensíveis do usuário antes de persisti-los no banco de dados
-- Suas respostas durante o code review
-- Sua descrição do que foi feito na sua "pull request"
-- Setup da aplicação em apenas um comando ou um script que facilite esse setup
-- Outros tipos de testes, como: testes funcionais e de integração
-- Histórico do seus commits, com mensagens descritivas do que está sendo desenvolvido.
----
+## ▶️ Getting Started
 
-Boa sorte!
+- **Passo 1️⃣** : git clone do projeto [Serasa](https://github.com/rafaelsanzio/serasa "Serasa")
+- **Passo 2️⃣** : executar a instalação do [Go](https://golang.org/ "Go") e [Docker](https://www.docker.com/ "Docker")
+
+```bash
+   # Navegando até a pasta do projeto
+   $ cd serasa
+
+   # Instalando as dependências do projeto
+   $ go get .
+
+   # Criando imagem do banco de dados (mongoDB) da aplicação
+   $ docker run --name serasa -p 27017:27017 -d -t mongo
+
+   # Iniciando banco de dados da aplicação
+   $ docker start serasa
+
+   # Criar arquivo .env baseado no .env.example
+   # Preencher o arquivo .env
+   # Gerar token de acordo com o API_KEY
+
+   # Rodando a aplicação
+   $ go run main.go
+```
+
+## ⚙️ Exemplificando rotas
+
+- [Documentação da API](https://documenter.getpostman.com/view/15147727/TzCJgpwK "Documentação da API")
+
+## ㊗ ️ Considerações
+
+- Projeto desenvolvido by:
+
+  - <a href="https://github.com/rafaelsanzio">
+      <img src="https://img.shields.io/badge/-Rafael%20Sanzio-000000?style=flat&logo=GitHub&logoColor=#000000" />
+    </a>
+
+  - <a href="https://www.linkedin.com/in/rafael-sanzio-012778143/">
+      <img src="https://img.shields.io/badge/-Rafael%20Sanzio-0077B5?style=flat&logo=LinkedIN&logoColor=#000000" />
+    </a>
